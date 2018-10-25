@@ -881,6 +881,9 @@
                             <constraint firstAttribute="bottom" secondItem="htz-D9-Tcj" secondAttribute="bottom" constant="20" symbolic="YES" id="yUH-Mx-j8X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="htz-D9-Tcj" id="8WU-8n-YnN"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

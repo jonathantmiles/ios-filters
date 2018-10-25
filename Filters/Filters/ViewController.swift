@@ -22,6 +22,23 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func openDocument(_ sender: Any?) {
+        let panel = NSOpenPanel(contentRect: NSRect(x: 300.0, y: 200.0, width: 300.0, height: 200.0), styleMask: [.closable, .fullScreen, .miniaturizable], backing: .buffered, defer: false)
+        panel.canChooseFiles = true
+        
+        panel.begin { (response) in
+            if response == NSApplication.ModalResponse.OK {
+                let openedImageFilePath = panel.urls.first!
+                
+                let image = NSImage(byReferencing: openedImageFilePath)
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
+    
+    @IBOutlet weak var imageView: NSImageView!
+    
 }
 
