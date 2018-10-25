@@ -12,9 +12,13 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 
+    @IBAction func openDocument(_ sender: Any?) {
+        let panel = NSOpenPanel(contentRect: NSRect(x: 300.0, y: 200.0, width: 300.0, height: 200.0), styleMask: [.closable, .fullScreen, .miniaturizable], backing: .buffered, defer: <#T##Bool#>)
+    }
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
