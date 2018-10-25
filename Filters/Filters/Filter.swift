@@ -9,20 +9,20 @@
 import Foundation
 import CoreImage
 
-class Filter: NSObject {
+@objc class Filter: NSObject {
     
     init(filterNamed name: String, sliders: [Slider]) {
         self.filter = CIFilter(name: name)!
         self.sliders = sliders
     }
     
-    var filter: CIFilter
+    @objc dynamic var filter: CIFilter
     
-    var sliders: [Slider]
+    @objc dynamic var sliders: [Slider]
     // or maybe filter.inputKeys!
     
     
-    class Slider: NSObject {
+    @objc class Slider: NSObject {
         init(displayName: String, sliderMax: NSNumber, sliderMin: NSNumber, attributeDefault: NSNumber) {
             self.displayName = displayName
             self.sliderMax = sliderMax
@@ -30,9 +30,9 @@ class Filter: NSObject {
             self.attributeDefault = attributeDefault
         }
         
-        let displayName: String
-        let sliderMax: NSNumber
-        let sliderMin: NSNumber
-        let attributeDefault: NSNumber
+        @objc dynamic let displayName: String
+        @objc dynamic let sliderMax: NSNumber
+        @objc dynamic let sliderMin: NSNumber
+        @objc dynamic let attributeDefault: NSNumber
     }
 }
